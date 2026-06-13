@@ -1,0 +1,19 @@
+# epoll based pub sub model file/folder watcher 
+ It is a Non blocking edge triggered epoll based single threaded server 
+  that watches files and can send event to multiple subscribers and
+  can take commands on seperate server(it is feeling good to use seperate server so i use)
+
+
+*   **Central Event Loop**: `epollManager.runEventLoop` central event loop that calls corresponding handler on fd request.
+*   **Pub-Sub Model**: it is using publish subscriber model to add files/folders to list and use subscriber to recieve evetns.
+*   ** concurrent behaviour**: due to use of non blocking with epoll edge trigger ,it can simulate concurency with single thread
+ ## Some Caveats are still there
+*   **Client Management**: Client objects are currently managed directly via `epollObject.data.ptr`.
+*   **Cleanup Mechanism**: Proper cleanup and resource deallocation are handled implicitly based on EPOLLRDHUP and epollerrorevents using callback lambda functions (handlers) to safely remove these objects and prevent memory leaks.
+ 
+## Build Instructions
+   use release build to remove debug statements as they use NDEBUG macro to condition on flags
+   
+    be happy live your life.
+
+    test file is not written by me  (i prefer socat to test)
