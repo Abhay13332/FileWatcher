@@ -1,0 +1,23 @@
+---
+# Define the baseline style to extend (e.g., LLVM, Google, Chromium, Mozilla, WebKit, Microsoft)
+BasedOnStyle: LLVM
+
+# Language target
+Language: Cpp
+
+# Indentation configuration
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never
+
+# Code layout rules
+ColumnLimit: 100
+AllowShortFunctionsOnASingleLine: Empty
+FixNamespaceComments: true
+SortIncludes: true
+
+# Alignment settings
+AlignConsecutiveAssignments: false
+AlignConsecutiveDeclarations: false
+PointerAlignment: Left
+...

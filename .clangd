@@ -1,0 +1,24 @@
+Diagnostics:
+  ClangTidy:
+    # 1. Turn on the identifier naming check
+
+    # Inside your .clang-tidy configuration file
+    HeaderFilterRegex: '.*'
+
+    Add: [readability-identifier-naming, performance-*, portability-*]
+    
+    # 2. Define the styling rules
+    CheckOptions:
+# Inside your .clang-tidy configuration file
+
+      # Classes and Structs -> Uppercase (PascalCase)
+      readability-identifier-naming.ClassCase: CamelCase
+      readability-identifier-naming.StructCase: CamelCase
+      
+      # Functions and Methods -> camelCase
+      readability-identifier-naming.FunctionCase: camelBack
+      readability-identifier-naming.MethodCase: camelBack
+      
+      # Variables and Parameters -> camelCase
+      readability-identifier-naming.VariableCase: camelBack
+      readability-identifier-naming.ParameterCase: camelBack

@@ -1,0 +1,17 @@
+{
+
+     "cmake.debugConfig": {
+        "type": "lldb",
+        "request": "launch"
+    },
+    "lldb.suppressAsm": true,
+    "clangd.arguments": [
+    "--background-index",
+    "--clang-tidy",
+    "--header-insertion=never",
+    "--completion-style=detailed",
+    "-j=4"
+],
+"python.analysis.autoImportCompletions": false,
+
+}
